@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   end
 
 
-  get 'home' => 'home#index'
+  root 'home#welcome'
 
   # ===== SESSIONS ROUTES (AUTHENT) ===== *
-  get '/sign_up' => 'users#new'
   get '/login' => 'sessions#new' 
   post '/login' => 'sessions#create'
   get '/log_out' =>'sessions#destroy'

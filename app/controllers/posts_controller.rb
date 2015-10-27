@@ -17,13 +17,16 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.create(post_params)
+		@post = Post.create(title: params[:post][:title], 
+				body: params[:post][:body], 
+				user_id: session[:user_id])
+		
 		if @post.save
 			redirect_to posts_path
 			flash[:posted] = "New post created"
 		else
 			flash[:correctPost] = "Please fill the form correctly. \n Title should contain at least 5 characters"
-			render 'new'
+			render :new
 		end
 	end
 

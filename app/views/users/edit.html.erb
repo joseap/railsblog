@@ -1,16 +1,15 @@
 
 <%= form_for @user do |f| %>
-	<%= f.label "First Name" %>
-	<%= f.text_field :fname %>
-	<%= f.label "Last Name" %>
-	<%= f.text_field :lname %>
-	<%= f.label "Username" %>
-	<%= f.text_field :username %>
-	<%= f.label "E-mail" %>
-	<%= f.text_field :email %>
-	<%= f.label "Password" %>
-	<%= f.text_field :password %>
-	<%= f.label "Country" %>
-	<%= f.text_field :country %>
-	<%= f.submit "Update" %>
+	<ul>
+		<li><%= f.label "First Name" %>	<%= f.text_field :fname %></li>
+		<li><%= f.label "Last Name" %><%= f.text_field :lname %></li>
+		<li><%= f.label "Username" %><%= f.text_field :username %></li>
+		<li><%= f.label "E-mail" %><%= f.text_field :email %></li>
+		<li><%= f.label "Password" %><%= f.text_field :password %></li>
+		<li><%= f.label "Country" %><%= f.text_field :country %></li>
+		<%= f.submit "Update" %>
+	</ul>	
+	
+ 	<%= link_to "Delete", @user, data: { confirm: "Are you sure?" }, method: :delete %>
+
 <% end %>

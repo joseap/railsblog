@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		if @user && @user.password == params[:password]
 			session[:user_id] = @user.id
 			flash[:loggedin] = "You're now logged in"
-			redirect_to @user
+			redirect_to root_path
 		else
 			flash.now[:alert] = "Invalid email or password, please try again"
 			render :new
@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 	def destroy
 		session[:user_id] = nil
 		flash[:loggedout] = "You've been logged out"
-		redirect_to home_path
+		redirect_to root_path
 	end
 end

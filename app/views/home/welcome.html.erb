@@ -1,0 +1,9 @@
+<h1>WELCOME</h1>
+
+<% if session[:user_id] %>
+	<h2>Hello <%= session[:user_id] %> !</h2>
+<% end %>
+
+<%= flash[:loggedout] if flash[:loggedout] %>
+<%= flash[:loggedin] if flash[:loggedin] %>
+
