@@ -1,15 +1,23 @@
+<div class="wrapper-high">
 
-<%= form_for @user do |f| %>
-	<ul>
-		<li><%= f.label "First Name" %>	<%= f.text_field :fname %></li>
-		<li><%= f.label "Last Name" %><%= f.text_field :lname %></li>
-		<li><%= f.label "Username" %><%= f.text_field :username %></li>
-		<li><%= f.label "E-mail" %><%= f.text_field :email %></li>
-		<li><%= f.label "Password" %><%= f.text_field :password %></li>
-		<li><%= f.label "Country" %><%= f.text_field :country %></li>
-		<%= f.submit "Update" %>
-	</ul>	
-	
- 	<%= link_to "Delete", @user, data: { confirm: "Are you sure?" }, method: :delete %>
-
-<% end %>
+<h1> UPDATE YOUR PROFILE </h1>
+	<div class="form">
+		<%= form_for @user do |f| %>
+				<li><%= f.label "First Name" %></li>
+				<p><%= f.text_field :fname %></p>
+				<li><%= f.label "Last Name" %></li>
+				<p><%= f.text_field :lname %></p>
+				<li><%= f.label "Username" %>
+				<p><%= f.text_field :username %></p>
+				<li><%= f.label "E-mail" %></li>
+				<p><%= f.text_field :email %></p>
+				<li><%= f.label "Password" %></li>
+				<p><%= f.text_field :password %></p>
+				<li><%= f.label "Country" %></li>
+				<p><%= f.text_field :country %></p>
+				<%= f.submit "Update", class: "btn" %>
+				<br><br>
+		 	<%= link_to "Delete", @user, data: { confirm: "OMG, OMG, OMG ARE YOU FU£*!&@ SURE!?" }, method: :delete %>
+		<% end %>
+	</div>
+</div>

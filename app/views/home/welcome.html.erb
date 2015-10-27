@@ -1,9 +1,15 @@
-<h1>WELCOME</h1>
+<div class="wrapper">
 
-<% if session[:user_id] %>
-	<h2>Hello <%= session[:user_id] %> !</h2>
-<% end %>
+	<% if session[:user_id] %>
+		<h2>Hello <%= session[:user_id] %>!</h2>
+	<% else %>
+		<h1>WELCOME</h1>
 
-<%= flash[:loggedout] if flash[:loggedout] %>
-<%= flash[:loggedin] if flash[:loggedin] %>
+		<h2>This is literally a <strong style="color:red" >micro</strong> website testing the <br> usage of <strong style="color:red" > ruby </strong> on <strong style="color:red" > rails </strong></h2> 
+	<% end %>
+
+	<h3><%= flash[:loggedout] if flash[:loggedout] %></h3>
+	<h3><%= flash[:loggedin] if flash[:loggedin] %></h3>
+</div>
+
 

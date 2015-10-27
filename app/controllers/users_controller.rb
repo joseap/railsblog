@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.update(user_params)
 		flash[:updated] = "User updated"
-		redirect_to users_path		
+		redirect_to user_path	
 	end
 
 	def destroy 

@@ -1,10 +1,19 @@
+<div class="wrapper-high">
+<h3><%= flash[:created] if flash[:created] %></h3>
 
-<%= flash[:created] if flash[:created] %>
+<h3><%= "Welcome " + @user.username %></h3>
+<h3><%= flash[:updated] if flash[:updated] %></h3>
 
-<h1><%= "Welcome back " + @user.username %></h1>
-	<h2> Your Profile </h2>
+	<h1> Your Profile </h1>
+	<h2><%= label_tag "Username" %></h2>
 	<p><%= @user.username %></p>
-	<p><%= @user.fname %></p>
-	<p><%= @user.lname %></p>
+	<h2><%= label_tag "Name" %></h2>
+	<p><%= @user.fname + " " + @user.lname %></p>
+	<h2><%= label_tag "Email" %></h2>
 	<p><%= @user.email %></p>
+	<h2><%= label_tag "Country" %></h2>
 	<p><%= @user.country %></p>
+
+	<%= link_to "Edit", edit_user_path(@user.id) %>
+	<%= link_to "Delete", @user, data: { confirm: "Are you sure?" }, method: :delete %>
+</div>
