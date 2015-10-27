@@ -1,0 +1,9 @@
+<%= flash[:updated] if flash[:updated] %>
+
+<%= form_for @post do |f| %>
+	<%= f.label "Title" %>
+	<%= f.text_field :title %>
+	<%= f.label "Body" %>
+	<%= f.text_field :body %>
+	<%= f.submit "Update" %>
+<% end %>

@@ -1,0 +1,10 @@
+
+<%= flash[:created] if flash[:created] %>
+
+<h1><%= "Welcome back " + @user.username %></h1>
+	<h2> Your Profile </h2>
+	<p><%= @user.username %></p>
+	<p><%= @user.fname %></p>
+	<p><%= @user.lname %></p>
+	<p><%= @user.email %></p>
+	<p><%= @user.country %></p>

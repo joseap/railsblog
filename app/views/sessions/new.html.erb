@@ -1,0 +1,11 @@
+<h1>Log In</h1>
+
+<%= flash[:alert] if flash[:alert] %>
+
+<%= form_tag '/login', method: :post do |f| %>
+		<%= label_tag "E-mail" %>
+		<p><%= email_field_tag :email %></p>
+		<%= label_tag "Password" %>
+		<p><%= password_field_tag :password %></p>
+		<%= submit_tag :login, :class => 'submitbtn'%>
+<% end %>

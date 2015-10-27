@@ -1,0 +1,12 @@
+<h1>All Posts</h1>
+
+<%= flash[:deleted] if flash[:deleted] %>
+<%= flash[:updated] if flash[:updated] %>
+<%= flash[:posted] if flash[:posted] %>
+<br>
+<% @post.each do |post| %>
+	<h3><%= link_to post.title, post_path(post.id) %></h3>
+	<p><%= post.body %></p>
+	<%= link_to "Edit Post", edit_post_path(post.id) %>
+	<%= link_to "Delete Post", post, data: { confirm: "Are you sure?"}, method: :delete %>
+<% end %>

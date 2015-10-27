@@ -1,0 +1,11 @@
+<h1> Create New Post </h1>
+
+<%= flash[:correctPost] if flash[:correctPost] %>
+
+<%= form_for @post do |f| %>
+	<h3><%= f.label "Title" %></h3>
+	<p><%= f.text_field :title %></p>
+	<h3><%= f.label "Body" %></h3>
+	<p><%= f.text_area :body %></p>
+	<%= f.submit "Create Post" %>
+<% end %>

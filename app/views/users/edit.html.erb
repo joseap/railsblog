@@ -1,0 +1,17 @@
+<%= flash[:updated] if flash[:updated] %>
+
+<%= form_for @user do |f| %>
+	<%= f.label "First Name" %>
+	<%= f.text_field :fname %>
+	<%= f.label "Last Name" %>
+	<%= f.text_field :lname %>
+	<%= f.label "Username" %>
+	<%= f.text_field :username %>
+	<%= f.label "E-mail" %>
+	<%= f.text_field :email %>
+	<%= f.label "Password" %>
+	<%= f.text_field :password %>
+	<%= f.label "Country" %>
+	<%= f.text_field :country %>
+	<%= f.submit "Update" %>
+<% end %>
