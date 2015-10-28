@@ -1,8 +1,15 @@
 <div class="wrapper-high">
 
+
+
 <h1> UPDATE YOUR PROFILE </h1>
 	<div class="form">
-		<%= form_for @user do |f| %>
+		<%= form_for @user , :html => { :multipart => true } do |f| %>
+				<h2>PROFILE PIC </h2>
+				<%= image_tag @user.avatar.url(:thumb) if @user.avatar.present? %>
+				<br>
+				<%= f.file_field :avatar %> 
+				<h1> PROFILE INFO </h1>
 				<li><%= f.label "First Name" %></li>
 				<p><%= f.text_field :fname %></p>
 				<li><%= f.label "Last Name" %></li>

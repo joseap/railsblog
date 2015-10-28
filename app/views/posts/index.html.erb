@@ -1,6 +1,6 @@
 <div class="wrapper-high">
 	<h1>All Posts</h1>
-
+	
 	<hr>
 
 	<h3><%= flash[:deleted] if flash[:deleted] %></h3>
@@ -12,11 +12,13 @@
 
 	<div class="post">
 		<% @post.each do |post| %>
-			<h1><%= link_to post.title, post_path(post.id) %></h1>
+		
+			<h1><%= link_to post.title, post_path(post.id)%></h1>
 			<h3>By: <%= post.user.username %></h3>
 			<p><%= post.body %></p>
 
 			<h3><%= link_to "Comments", post_path(post.id) %> (<%= post.comments.count %>)</h3>
+			<h3>Post created at: <%= post.created_at %></h3>
 
 			<% if post.user_id == session[:user_id] %>
 				<h3><%= link_to "Delete", post, method: :delete, data: { confirm: "ARE YOU SUUUUUUURE?"} %></h3>

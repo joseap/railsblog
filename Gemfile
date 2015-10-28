@@ -45,5 +45,7 @@ group :development do
   gem 'spring'
 
   gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5', :require => 'bcrypt'
+
+  gem "paperclip", "~> 4.2"
 end
 

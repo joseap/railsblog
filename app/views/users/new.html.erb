@@ -3,7 +3,11 @@
 
 	<h3><%= flash[:correct] if flash[:correct] %></h3>
 
-	<%= form_for @user do |f| %>
+	<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
+			<h2>Upload profile pic</h2><h3>optional</h3>
+			<%= f.file_field :avatar %> 
+			<br> 
+			<h2> Enter your details </h2>
 			<li><%= f.label "First Name" %></li>
 			<p><%= f.text_field :fname, class: 'field' %></p>
 			<li><%= f.label "Last Name" %></li>
@@ -20,4 +24,8 @@
 			<p><%= f.text_field :country, class: 'field' %></p>
 			<%= f.submit "Create", class: "btn" %>
 	<% end %>
+
+	
+
+
 </div>

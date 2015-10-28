@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 		@post = Post.create(title: params[:post][:title], 
 				body: params[:post][:body], 
 				user_id: session[:user_id])
-		
+
 		if @post.save
 			flash[:posted] = "New post created"
 		else
