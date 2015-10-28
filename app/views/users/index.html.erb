@@ -1,13 +1,17 @@
 <div class="wrapper-high">
 	<h1> USER LIST </h1>
 
+	<hr>
+
 	<h3><%= flash[:created] if flash[:created] %></h3>
 	<h3><%= flash[:deleted] if flash[:deleted] %></h3>
 
-	<% @user.each do |user| %>
-		<ul>
-			<li><strong>User: </strong><%= link_to user.fname + " " + user.lname, user_path(user.id) %></li>
-			<li><strong>Username:</strong> <%= user.username %></li>
-		</ul>
-	<% end %>
+	<div class="list">
+		<% @user.each do |user| %>
+		
+				<p><strong>User: </strong><%= link_to user.fname + " " + user.lname, user_path(user.id) %></p>
+				<p><strong>Username:</strong> <%= user.username %></p>
+			</ul>
+		<% end %>
+	</div>
 </div>

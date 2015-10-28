@@ -1,2 +1,6 @@
+<div class="wrapper-high">
+<h1> THESE COMMENTS </h1>
 <p><%= comment.body %></p>
+<p>Written by: <%= comment.user.username %></p>
 <p><%= link_to "Delete", [comment.post, comment], data: { confirm: "Are you sure?"}, method: :delete %></p>
+</div>

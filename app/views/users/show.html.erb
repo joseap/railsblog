@@ -4,7 +4,7 @@
 <h3><%= "Welcome " + @user.username %></h3>
 <h3><%= flash[:updated] if flash[:updated] %></h3>
 
-	<h1> Your Profile </h1>
+	<h1> USER PROFILE </h1>
 	<h2><%= label_tag "Username" %></h2>
 	<p><%= @user.username %></p>
 	<h2><%= label_tag "Name" %></h2>
@@ -13,7 +13,23 @@
 	<p><%= @user.email %></p>
 	<h2><%= label_tag "Country" %></h2>
 	<p><%= @user.country %></p>
+	<br><hr><br>
+	
+	<h1> USER POSTS </h1>
+	<div class="post">
+		<% @user.posts.each do |post| %>
+			<p><%= post.body %></p>
+			<h3>Post created at: <%= post.created_at %></h3>
+			<br>
+		<% end %>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<h1> USER COMMENTS </h1>
+	<% @user.comments.each do |comment| %>
+		<p><%= comment.body %></p>
+		<h3>Comment created at: <%= comment.created_at %></h3>
+	<% end %>
 
-	<%= link_to "Edit", edit_user_path(@user.id) %>
-	<%= link_to "Delete", @user, data: { confirm: "Are you sure?" }, method: :delete %>
 </div>

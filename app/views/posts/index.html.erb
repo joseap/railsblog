@@ -1,12 +1,21 @@
-<h1>All Posts</h1>
+<div class="wrapper-high">
+	<h1>All Posts</h1>
 
-<%= flash[:deleted] if flash[:deleted] %>
-<%= flash[:updated] if flash[:updated] %>
-<%= flash[:posted] if flash[:posted] %>
-<br>
-<% @post.each do |post| %>
-	<h3><%= link_to post.title, post_path(post.id) %></h3>
-	<p><%= post.body %></p>
-	<%= link_to "Edit Post", edit_post_path(post.id) %>
-	<%= link_to "Delete Post", post, data: { confirm: "Are you sure?"}, method: :delete %>
-<% end %>
+	<hr>
+
+	<h3><%= flash[:deleted] if flash[:deleted] %></h3>
+	<h3><%= flash[:updated] if flash[:updated] %></h3>
+	<h3><%= flash[:posted] if flash[:posted] %></h3>
+	<br>
+
+	<div class="post">
+		<% @post.each do |post| %>
+			<h1><%= link_to post.title, post_path(post.id) %></h1>
+			<h3>By: <%= post.user.username %></h3>
+			<p><%= post.body %></p>
+
+			<h3><%= link_to "Comments", post_path(post.id) %> (<%= post.comments.count %>)</h3>
+			<hr>
+		<% end %>
+	</div>
+</div>

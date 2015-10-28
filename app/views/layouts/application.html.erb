@@ -14,6 +14,7 @@
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+  
 </head>
 <body>
 
@@ -22,10 +23,10 @@
 <nav>
 	<% if session[:user_id] %>
 		<li><%= link_to "Home |", root_path %></li>
+		<li><%= link_to "New Post |", new_post_path %></li>
+		<li><%= link_to "All Posts |", posts_path %></li>
 		<li><%= link_to "All Users |", users_path %></li>
 		<li><%= link_to "Edit Profile |", edit_user_path(session[:user_id]) %></li>
-		<li><%= link_to "All Posts |", posts_path %></li>
-		<li><%= link_to "New Post |", new_post_path %></li>
 		<li><%= link_to "Log Out", log_out_path %></li>
 
 	<% else %>
@@ -35,18 +36,14 @@
 	<% end %>
 	
 </nav>
-
-	<footer>
-		<a href="https://github.com/joseap/railsblog" target="_blank"><h4><i class="fa fa-github-square fa-4x"></i></h4></a>
-		<h4>everything is so small here</h4>
-		<h4> <em>&copy; Jose Plata</em> </h4>
-	</footer>
-
 <%= yield %>
-
-
-
 </div>
+
+<footer>
+	<a href="https://github.com/joseap/railsblog" target="_blank"><h4><i class="fa fa-github-square fa-4x"></i></h4></a>
+	<h4>everything is so small here</h4>
+	<h4> <em>&copy; Jose Plata</em> </h4>
+</footer>
 
 </body>
 </html>
