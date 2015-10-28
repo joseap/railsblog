@@ -20,16 +20,28 @@
 		<% @user.posts.each do |post| %>
 			<p><%= post.body %></p>
 			<h3>Post created at: <%= post.created_at %></h3>
-			<br>
+
+			<% if post.user_id == session[:user_id] %>
+				<h3><%= link_to "Delete", post, method: :delete, data: { confirm: "ARE YOU SUUUUUUURE?"} %></h3>
+			<% end %>
+
 		<% end %>
 	</div>
 	<br>
 	<hr>
 	<br>
+
 	<h1> USER COMMENTS </h1>
 	<% @user.comments.each do |comment| %>
 		<p><%= comment.body %></p>
 		<h3>Comment created at: <%= comment.created_at %></h3>
+
+		<% if comment.user_id == session[:user_id] %>
+			<h3><%= link_to "Delete", method: :delete, data: { confirm: "ARE YOU SUUUUUUURE?"} %></h3>
+		<% end %>
+
 	<% end %>
+
+
 
 </div>

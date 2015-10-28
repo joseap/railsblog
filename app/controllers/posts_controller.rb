@@ -27,12 +27,16 @@ class PostsController < ApplicationController
 				user_id: session[:user_id])
 		
 		if @post.save
-			redirect_to posts_path
 			flash[:posted] = "New post created"
 		else
 			flash[:correctPost] = "Please fill the form correctly. \n Title should contain at least 5 characters"
 			render :new
 		end
+
+		# TESTING AJAX FORMS
+		respond_to do |format|
+			format.html { render 'postpost'}
+		end	
 	end
 
 	def update 
