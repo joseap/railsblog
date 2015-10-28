@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
 			session[:user_id] = @user.id
 			flash[:loggedin] = "You're now logged in"
 			redirect_to root_path
+		elsif session[:user_id] == nil
+			flash[:nouser] = "No user found with those credentials"
+			render :new
 		else
 			flash.now[:alert] = "Invalid email or password, please try again"
 			render :new

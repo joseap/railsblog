@@ -5,10 +5,11 @@
 
 	<h3><%= flash[:created] if flash[:created] %></h3>
 	<h3><%= flash[:deleted] if flash[:deleted] %></h3>
+	<h3><%= flash[:alert] if flash[:alert] %></h3>
+	<h3><%= flash[:notice] if flash[:notice] %></h3>
 
 	<div class="list">
 		<% @user.each do |user| %>
-		
 				<p><strong>User: </strong><%= link_to user.fname + " " + user.lname, user_path(user.id) %></p>
 				<p><strong>Username:</strong> <%= user.username %></p>
 			</ul>

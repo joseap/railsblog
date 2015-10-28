@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
 	def index
 		@post = Post.all
+		if @post.present?
+			flash[:notice] = "Post List"
+		else
+			flash[:alert] = "No Posts Found"
+		end
 	end
 
 	def show
