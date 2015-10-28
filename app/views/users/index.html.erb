@@ -10,11 +10,11 @@
 
 	<div class="list">
 		<% @user.each do |user| %>
-				<%= image_tag user.avatar.url(:thumb) %>
-				<p><strong>User: </strong><%= link_to user.fname + " " + user.lname, user_path(user.id) %></p>
-				<p><strong>Username:</strong> <%= user.username %></p>
-			</ul>
-			
+				<%= link_to image_tag(user.avatar.url(:thumb)), user %>	
 		<% end %>
 	</div>
 </div>
+
+
+		
+

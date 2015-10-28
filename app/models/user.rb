@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	validates_uniqueness_of :username
 	validates :email, confirmation: true, presence: true
 	validates :password, confirmation: true, presence: true, length: { minimum: 5 }
-	validates_presence_of :username, :fname, :lname, :email, :password, :country
+	validates_presence_of :username, :fname, :lname, :email, :password, :country, :avatar
 
 	before_validation :ensure_username_has_a_value
 	before_validation :normalize_username, on: :create

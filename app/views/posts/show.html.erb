@@ -1,11 +1,12 @@
 <div class="wrapper-high">
-	<h1>THIS POST</h1>
+	<h1>POST</h1>
 	<div class="post">
 		<h2><%= @post.title %></h2>
 		<%= flash[:destroyed] if flash[:destroyed] %>
 		<p><%= @post.body %></p>
 		<br>
 		<hr>
+		<h1 class="wrapper-high">COMMENTS</h1>
 		<%= render @post.comments %>
 		<%= render 	'comments/form' %>
 		</div>

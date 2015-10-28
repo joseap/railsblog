@@ -4,7 +4,7 @@
 	<h3><%= flash[:correct] if flash[:correct] %></h3>
 
 	<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-			<h2>Upload profile pic</h2><h3>optional</h3>
+			<h2>Upload profile pic</h2><h3>NOT optional</h3>
 			<%= f.file_field :avatar %> 
 			<br> 
 			<h2> Enter your details </h2>
